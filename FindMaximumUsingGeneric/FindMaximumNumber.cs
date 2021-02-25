@@ -21,7 +21,7 @@ namespace FindMaximumUsingGeneric
                 return num3;
             }
             else
-                throw new FindMaximumNumberException("All numbers are same");
+                throw new FindMaximumNumberException("All number are same");
         }
     }
 }
