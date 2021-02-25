@@ -76,5 +76,38 @@ namespace FindMaximumNumberNUnitTestProject
         {
             Assert.AreEqual(num3, findMaximumNumber.FindMaximumNum(num1, num2, num3));
         }
+        /// <summary>
+        /// TC 3.1 Max string at 1st position and return the same number
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <param name="str3"></param>
+        [TestCase("Peach", "Apple", "Banana")]
+        public void GivenFirstStringMaxReturnMaximum(string str1, string str2, string str3)
+        {
+            Assert.AreEqual(str1, findMaximumNumber.FindMaximumString(str1, str2, str3));
+        }
+        /// <summary>
+        /// TC 3.2 Max string at 2nd position and return the same number
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <param name="str3"></param>
+        [TestCase("Apple", "Peach", "Banana")]
+        public void GivenSecondStringMaxReturnMaximum(string str1, string str2, string str3)
+        {
+            Assert.AreEqual(str2, findMaximumNumber.FindMaximumString(str1, str2, str3));
+        }
+        /// <summary>
+        /// TC 3.2 Max string at 3rd position and return the same number
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <param name="str3"></param>
+        [TestCase("Apple", "Banana", "Peach")]
+        public void GivenThirdStringMaxReturnMaximum(string str1, string str2, string str3)
+        {
+            Assert.AreEqual(str3, findMaximumNumber.FindMaximumString(str1, str2, str3));
+        }
     }
 }
