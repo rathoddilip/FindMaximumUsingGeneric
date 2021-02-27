@@ -56,5 +56,6 @@ namespace FindMaximumUsingGeneric
             }
             throw new FindMaximumNumberException("All strings are Same");
         }
+       
     }
 }
