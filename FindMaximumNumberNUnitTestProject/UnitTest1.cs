@@ -9,14 +9,18 @@ namespace FindMaximumNumberNUnitTestProject
         FindMaximumGenericClass<int> findMaximumGenericClassInt;
         FindMaximumGenericClass<float> findMaximumGenericClassFlaot;
         FindMaximumGenericClass<string> findMaximumGenericClassString;
+        FindMaximumGenericClass<int> findMaximumGenericClassPara;
         [SetUp]
         public void Setup()
         {
-           findMaximumNumber = new FindMaximumNumber();
+            findMaximumNumber = new FindMaximumNumber();
             findMaximumGenericClassInt = new FindMaximumGenericClass<int>();
             findMaximumGenericClassFlaot = new FindMaximumGenericClass<float>();
             findMaximumGenericClassString = new FindMaximumGenericClass<string>();
+            findMaximumGenericClassPara = new FindMaximumGenericClass<int>(66,77, 88);
         }
+
+       
         /// <summary>
         /// TC 1.1 Max number at 1st position and return the same number 
         /// </summary>
@@ -73,7 +77,7 @@ namespace FindMaximumNumberNUnitTestProject
             Assert.AreEqual(num2, findMaximumNumber.FindMaximumNum(num1, num2, num3));
         }
         /// <summary>
-        /// TC 2.2 Max number at 2nd position and return the same number 
+        /// TC 2.3 Max number at 3rd position and return the same number 
         /// </summary>
         /// <param name="num1"></param>
         /// <param name="num2"></param>
@@ -118,6 +122,7 @@ namespace FindMaximumNumberNUnitTestProject
         }
         //---------------------------------------------------------------------------------------------------------------------------------
         // Generic class and generic method test
+        //UC-3 Refactor1
         /// <summary>
         /// TC 1.1 Max number at 1st position and return the same number 
         /// </summary>
@@ -174,7 +179,7 @@ namespace FindMaximumNumberNUnitTestProject
             Assert.AreEqual(num2, findMaximumGenericClassFlaot.FindMaximumNum(num1, num2, num3));
         }
         /// <summary>
-        /// TC 2.2 Max number at 2nd position and return the same number 
+        /// TC 2.3 Max number at 3rd position and return the same number 
         /// </summary>
         /// <param name="num1"></param>
         /// <param name="num2"></param>
@@ -216,6 +221,13 @@ namespace FindMaximumNumberNUnitTestProject
         public void GivenThirdStringMaxReturnMaximumGeneric(string str1, string str2, string str3)
         {
             Assert.AreEqual(str3, findMaximumGenericClassString.FindMaximumNum(str1, str2, str3));
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        //UC-3 Refactor2
+        [Test]
+        public void GiveGenericParaClassReturnMax()
+        {
+            Assert.AreEqual(88, findMaximumGenericClassPara.TestMaximum());
         }
     }
 }

@@ -4,8 +4,27 @@ using System.Text;
 
 namespace FindMaximumUsingGeneric
 {
-   public class FindMaximumGenericClass<T> where T : IComparable
+    public class FindMaximumGenericClass<T> where T : IComparable
     {
+
+
+        public T variable1, variable2, variable3;
+        /// <summary>
+        /// Parameterised Constructor
+        /// </summary>
+        /// <param name="variable1"></param>
+        /// <param name="variable2"></param>
+        /// <param name="variable3"></param>
+        public FindMaximumGenericClass(T variable1, T variable2, T variable3)
+        {
+            this.variable1 = variable1;
+            this.variable2 = variable2;
+            this.variable3 = variable3;
+        }
+        public FindMaximumGenericClass()
+            {
+
+            }
         /// <summary>
         /// Generic method
         /// </summary>
@@ -29,6 +48,10 @@ namespace FindMaximumUsingGeneric
             }
             else
                 throw new FindMaximumNumberException("All number are same");
+        }
+        public T TestMaximum()
+        {
+            return FindMaximumNum(this.variable1, this.variable2, variable3);
         }
 
     }
