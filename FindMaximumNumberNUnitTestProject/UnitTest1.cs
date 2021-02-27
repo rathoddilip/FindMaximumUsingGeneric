@@ -10,6 +10,7 @@ namespace FindMaximumNumberNUnitTestProject
         FindMaximumGenericClass<float> findMaximumGenericClassFlaot;
         FindMaximumGenericClass<string> findMaximumGenericClassString;
         FindMaximumGenericClass<int> findMaximumGenericClassPara;
+        FindMaximumGenericClass<int> findMaximumGenericClassArray;
         [SetUp]
         public void Setup()
         {
@@ -18,6 +19,7 @@ namespace FindMaximumNumberNUnitTestProject
             findMaximumGenericClassFlaot = new FindMaximumGenericClass<float>();
             findMaximumGenericClassString = new FindMaximumGenericClass<string>();
             findMaximumGenericClassPara = new FindMaximumGenericClass<int>(66,77, 88);
+            findMaximumGenericClassArray= new FindMaximumGenericClass<int>(new int[]{66,44,77,55,33 });
         }
 
        
@@ -228,6 +230,14 @@ namespace FindMaximumNumberNUnitTestProject
         public void GiveGenericParaClassReturnMax()
         {
             Assert.AreEqual(88, findMaximumGenericClassPara.TestMaximum());
+        }
+        /// <summary>
+        /// UC-4 taken random array and sort it and find max
+        /// </summary>
+        [Test]
+        public void GivenRandomArrayReturnMax()
+        {
+            Assert.AreEqual(77, findMaximumGenericClassArray.MaximumArray());
         }
     }
 }

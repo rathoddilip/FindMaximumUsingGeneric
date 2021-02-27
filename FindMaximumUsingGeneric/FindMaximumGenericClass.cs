@@ -9,6 +9,7 @@ namespace FindMaximumUsingGeneric
 
 
         public T variable1, variable2, variable3;
+        public T[] valueArray;
         /// <summary>
         /// Parameterised Constructor
         /// </summary>
@@ -20,6 +21,10 @@ namespace FindMaximumUsingGeneric
             this.variable1 = variable1;
             this.variable2 = variable2;
             this.variable3 = variable3;
+        }
+        public FindMaximumGenericClass(T[] valueArray)
+        {
+            this.valueArray = valueArray;
         }
         public FindMaximumGenericClass()
             {
@@ -49,9 +54,22 @@ namespace FindMaximumUsingGeneric
             else
                 throw new FindMaximumNumberException("All number are same");
         }
+        /// <summary>
+        /// Finding max 
+        /// </summary>
+        /// <returns></returns>
         public T TestMaximum()
         {
             return FindMaximumNum(this.variable1, this.variable2, variable3);
+        }
+        /// <summary>
+        /// Sorting random array
+        /// </summary>
+        /// <returns></returns>
+        public T MaximumArray()
+        {
+            Array.Sort(valueArray);
+            return valueArray[valueArray.Length - 1];
         }
 
     }
