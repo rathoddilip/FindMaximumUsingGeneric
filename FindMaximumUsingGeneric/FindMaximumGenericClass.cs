@@ -71,6 +71,9 @@ namespace FindMaximumUsingGeneric
             Array.Sort(valueArray);
             return valueArray[valueArray.Length - 1];
         }
-
+        public T PrintMax()
+        {
+            return TestMaximum();
+        }
     }
 }

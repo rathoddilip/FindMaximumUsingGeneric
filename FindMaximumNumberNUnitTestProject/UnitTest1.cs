@@ -239,5 +239,13 @@ namespace FindMaximumNumberNUnitTestProject
         {
             Assert.AreEqual(77, findMaximumGenericClassArray.MaximumArray());
         }
+        /// <summary>
+        /// UC-5 Called other generic method jnternally
+        /// </summary>
+        [Test]
+        public void CalledInternallyTestMaxMethodReturnMax()
+        {
+            Assert.AreEqual(88, findMaximumGenericClassPara.PrintMax());
+        }
     }
 }
